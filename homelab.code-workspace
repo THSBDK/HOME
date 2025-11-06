@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"name": "homelab",
+			"path": "../homelab"
+		},
+		{
+			"name": "HOME",
+			"path": "."
+		}
+	],
+	"settings": {}
+}
