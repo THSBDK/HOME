@@ -1,12 +1,12 @@
 ﻿# Phonestand with ESP32 and NFC (PN532)
 
-Project to design and 3D-print a phone stand that detects when a phone is placed on it. Detection will use a PN532 NFC/RFID module and an ESP32 microcontroller. Firmware will be developed in the Arduino IDE. The goal is to reliably detect phone presence, log events, and optionally expose a small web UI or MQTT updates.
+Project to design and 3D-print a phone stand that detects when a phone is placed on it. Detection will use a PN532 NFC/RFID module and an ESP32 microcontroller. Firmware will be developed witht the help of copilot. The goal is to reliably detect phone presence, log events, and optionally expose a small web UI or MQTT updates.
 
 ## Goals
 
-- 3D-print a clean, stable phone stand that can house the PN532 and ESP32.
-- Implement firmware in Arduino IDE for the ESP32 to read PN532 presence events.
-- Provide basic connectivity: serial logging, optional Wi-Fi + MQTT or tiny web UI for status.
+- 3D-print a clean, stable phone stand that can house the PN532 and ESP32.Maybe make space for common wireless chargers like the one for iphones
+- Implement firmware for the ESP32 to read PN532 presence events.
+- Provide basic connectivity: serial logging, optional Wi-Fi + MQTT or tiny web UI for status. And Home assistant sensors via ESPhome
 - Document assembly, wiring, and testing procedures.
 
 ## Todo (project-level)
@@ -14,18 +14,18 @@ Project to design and 3D-print a phone stand that detects when a phone is placed
 - [ ] Design 3D-print model for the phone stand (STL file).
 	- [ ] Ensure space/slots for PN532 module and ESP32 board
 	- [ ] Add cable routing and mounting points for sensors
-- [ ] Select hardware parts and order components
+- [x] Select hardware parts and order components
 	- ESP32 board (suggested: WROOM/WROVER variant)
 	- PN532 NFC module (I2C or SPI variant)
 	- Wires, female headers, optional enclosure parts
-- [ ] Wire up prototype on breadboard and validate PN532 communication
+- [x] Wire up prototype on breadboard and validate PN532 communication
 	- Confirm pinout, I2C/SPI mode, and power requirements
 - [ ] Implement firmware (Arduino IDE)
-	- [ ] Basic PN532 driver test (read UID)
-	- [ ] Phone-detection logic (presence/absence debouncing)
-	- [ ] Add logging over Serial
+	- [x] Basic PN532 driver test (read UID)
+	- [x] Phone-detection logic (presence/absence debouncing)
+	- [x] Add logging over Serial
 	- [ ] Optional: Wi‑Fi + MQTT publish or tiny web endpoint
-- [ ] Create test plan and verify detection reliability with multiple phone models
+- [x] Create test plan and verify detection reliability with multiple phone models
 - [ ] 3D-print prototypes and iterate fit/finish
 - [ ] Final wiring and enclosure assembly
 - [ ] Document assembly, flashing steps, and troubleshooting in this README

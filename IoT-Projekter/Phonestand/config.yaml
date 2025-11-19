@@ -1,0 +1,81 @@
+esphome:
+  name: hybridpresencenode
+  friendly_name: Hybrid Presence Node
+
+esp32:
+  board: esp32dev
+  framework:
+    type: esp-idf
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+  ap:
+    ssid: "Fallback Hotspot"
+    password: "fallback123"
+
+# Enable API for HA integration
+api:
+  encryption:
+    key: "qfxBuAHxWbY1ealIqsMYENNwRsyNUsK/DeocAuqlaDM="
+logger:
+
+ota:
+  - platform: esphome
+    password: "da457302e6274cbb6ccd5d86a4ab1831"
+
+# MQTT (optional if you want direct MQTT publishing in addition to HA API)
+#mqtt:
+#  broker: !secret mqtt_broker
+#  username: !secret mqtt_user
+#  password: !secret mqtt_pass
+
+# --- Bluetooth Proxy ---
+#bluetooth_proxy:
+esp32_ble_tracker:
+
+# --- PN532 NFC Reader ---
+i2c:
+  sda: 21
+  scl: 22
+  scan: true
+  frequency: 100kHz
+
+pn532_i2c:
+  update_interval: 1s
+  on_tag:
+    then:
+      - lambda: |-
+          std::string uid_str;
+          for (auto b : tag.get_uid()) {
+            char hex[4];
+            sprintf(hex, "%02X-", b);
+            uid_str += hex;
+          }
+          uid_str.pop_back();  // remove trailing dash
+          ESP_LOGI("nfc", "🎯 Tag UID: %s", uid_str.c_str());
+
+binary_sensor:
+  - platform: pn532
+    uid: "04-92-C4-CB-4C-59-80"   # iPhone NFC tag UID
+    name: "Thomas iPhone NFC"
+  - platform: pn532
+    uid: "04-52-EB-CB-4C-59-80"      # Android NFC tag UID
+    name: "Thomas Android NFC"
+# Example BLE presence (replace with MACs or beacon UUIDs if static)
+  - platform: ble_presence
+    #mac_address: "AA:BB:CC:DD:EE:FF"   # Example Android MAC
+    irk: "36d882e492530f80d17db3d6fb43b062"
+    name: "Android BLE Presence"
+  - platform: ble_presence
+    #mac_address: "11:22:33:44:55:66"   # Example iPhone MAC (if static)
+    irk: "40e9be44eeb0c24aa3d64bb9367607cf"
+    name: "iPhone BLE Presence"
+
+sensor:
+  - platform: ble_rssi
+    irk: "36d882e492530f80d17db3d6fb43b062"
+    name: "Android BLE Presence"
+  - platform: ble_rssi
+    irk: "40e9be44eeb0c24aa3d64bb9367607cf"
+    name: "iPhone BLE Presence"
