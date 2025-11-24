@@ -10,19 +10,16 @@ esp32:
 wifi:
   ssid: !secret wifi_ssid
   password: !secret wifi_password
-  ap:
-    ssid: "Fallback Hotspot"
-    password: "fallback123"
 
 # Enable API for HA integration
 api:
   encryption:
-    key: "qfxBuAHxWbY1ealIqsMYENNwRsyNUsK/DeocAuqlaDM="
+    key: !secret esphome_api_encryption_key
 logger:
-
+  level: INFO
 ota:
   - platform: esphome
-    password: "da457302e6274cbb6ccd5d86a4ab1831"
+    password: !secret esphome_ota_password
 
 # MQTT (optional if you want direct MQTT publishing in addition to HA API)
 #mqtt:
@@ -39,7 +36,7 @@ i2c:
   sda: 21
   scl: 22
   scan: true
-  frequency: 100kHz
+  frequency: 50kHz
 
 pn532_i2c:
   update_interval: 1s
@@ -52,7 +49,9 @@ pn532_i2c:
             sprintf(hex, "%02X-", b);
             uid_str += hex;
           }
-          uid_str.pop_back();  // remove trailing dash
+          if (!uid_str.empty()) {
+            uid_str.pop_back();  // remove trailing dash
+          }
           ESP_LOGI("nfc", "🎯 Tag UID: %s", uid_str.c_str());
 
 binary_sensor:
@@ -62,20 +61,18 @@ binary_sensor:
   - platform: pn532
     uid: "04-52-EB-CB-4C-59-80"      # Android NFC tag UID
     name: "Thomas Android NFC"
-# Example BLE presence (replace with MACs or beacon UUIDs if static)
+
   - platform: ble_presence
-    #mac_address: "AA:BB:CC:DD:EE:FF"   # Example Android MAC
     irk: "36d882e492530f80d17db3d6fb43b062"
-    name: "Android BLE Presence"
+    name: "Android BLE Presence (present)"
   - platform: ble_presence
-    #mac_address: "11:22:33:44:55:66"   # Example iPhone MAC (if static)
     irk: "40e9be44eeb0c24aa3d64bb9367607cf"
-    name: "iPhone BLE Presence"
+    name: "iPhone BLE Presence (present)"
 
 sensor:
   - platform: ble_rssi
     irk: "36d882e492530f80d17db3d6fb43b062"
-    name: "Android BLE Presence"
+    name: "Android BLE RSSI"
   - platform: ble_rssi
     irk: "40e9be44eeb0c24aa3d64bb9367607cf"
-    name: "iPhone BLE Presence"
+    name: "iPhone BLE RSSI"
