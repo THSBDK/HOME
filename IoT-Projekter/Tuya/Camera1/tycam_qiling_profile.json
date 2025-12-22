@@ -1,0 +1,22 @@
+{
+  "description": "Skeleton Qiling profile for Tuya RTS3903 tycam",
+  "rootfs": "mnt/tuya",
+  "target": "mnt/tuya/squashfs-root-1/skyeye/bin/tycam",
+  "arch": "mipsel",
+  "os": "linux",
+  "entry_point": "auto",
+  "env": {
+    "PATH": "/usr/bin:/usr/sbin:/bin:/sbin:/opt/bin/:/opt/skyeye/bin/",
+    "LD_LIBRARY_PATH": "./:/usr/local/lib:/usr/lib:/opt/lib"
+  },
+  "hooks": {
+    "ioctl": "TODO: hook ioctl to emulate rts_soc_camera, wifi, etc.",
+    "open": "TODO: handle /dev/video*, /dev/ttyS*, /proc/* paths",
+    "socket": "TODO: track MQTT / Tuya cloud traffic, stub connect"
+  },
+  "notes": [
+    "ty_platform.sh echoes 1 > /sys/devices/platform/rts_soc_camera/loadfw",
+    "You will likely need to stub /sys/devices/platform/rts_soc_camera/*",
+    "ty_monitor.sh expects /tmp/.mq_status, /etc/tuya/DevStatus.txt, nvram, etc."
+  ]
+}

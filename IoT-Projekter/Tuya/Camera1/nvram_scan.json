@@ -1,0 +1,70 @@
+{
+  "rootfs": "mnt/tuya",
+  "nvram_binaries": [
+    "squashfs-root-1/skyeye/bin/nvram"
+  ],
+  "nvram_keys": {
+    "STATUS": [
+      "squashfs-root-1/skyeye/script/app/ty_monitor.sh",
+      "squashfs-root-1/skyeye/bin/ty_sign"
+    ],
+    "CC": [
+      "squashfs-root-1/skyeye/script/app/ty_monitor.sh"
+    ],
+    "ETH_MAC": [
+      "squashfs-root-1/skyeye/script/app/ty_monitor.sh"
+    ],
+    "PID": [
+      "squashfs-root-1/skyeye/script/app/ty_puap.sh",
+      "squashfs-root-1/skyeye/bin/tycam"
+    ],
+    "UUID": [
+      "squashfs-root-1/skyeye/script/app/ty_puap.sh",
+      "squashfs-root-1/skyeye/bin/tycam"
+    ],
+    "AUTHKEY": [
+      "squashfs-root-1/skyeye/script/app/ty_puap.sh",
+      "squashfs-root-1/skyeye/bin/tycam"
+    ],
+    "P2PID": [
+      "squashfs-root-1/skyeye/script/app/ty_puap.sh",
+      "squashfs-root-1/skyeye/bin/tycam"
+    ],
+    "SN": [
+      "squashfs-root-1/skyeye/script/app/ty_puap.sh"
+    ],
+    "MAC": [
+      "squashfs-root-1/skyeye/script/app/ty_puap.sh"
+    ],
+    "BOOTFLAG": [
+      "squashfs-root-1/skyeye/bin/tycam"
+    ]
+  },
+  "interesting_keys": {
+    "ETH_MAC": [
+      "squashfs-root-1/skyeye/script/app/ty_monitor.sh"
+    ],
+    "PID": [
+      "squashfs-root-1/skyeye/script/app/ty_puap.sh",
+      "squashfs-root-1/skyeye/bin/tycam"
+    ],
+    "UUID": [
+      "squashfs-root-1/skyeye/script/app/ty_puap.sh",
+      "squashfs-root-1/skyeye/bin/tycam"
+    ],
+    "AUTHKEY": [
+      "squashfs-root-1/skyeye/script/app/ty_puap.sh",
+      "squashfs-root-1/skyeye/bin/tycam"
+    ],
+    "P2PID": [
+      "squashfs-root-1/skyeye/script/app/ty_puap.sh",
+      "squashfs-root-1/skyeye/bin/tycam"
+    ],
+    "MAC": [
+      "squashfs-root-1/skyeye/script/app/ty_puap.sh"
+    ]
+  },
+  "nvram_storage_candidates": [
+    "squashfs-root-1/skyeye/bin/nvram"
+  ]
+}

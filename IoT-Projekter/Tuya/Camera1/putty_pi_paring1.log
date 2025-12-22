@@ -1,0 +1,399 @@
+=~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2021.12.29 15:52:13 =~=~=~=~=~=~=~=~=~=~=~=
+
+
+U-Boot 2014.01-v1.2 (Apr 10 2020 - 15:42:09)
+
+Board: IPCAM RTS3903 CPU: 500M :rx5281 prid=0xdc02
+force spi nor mode
+DRAM:  64 MiB @ 1066 MHz
+Skipping flash_init
+Flash: 0 Bytes
+flash status is 0, 0, 0
+SF: Detected GD25Q64C with page size 256 Bytes, erase size 64 KiB, total 8 MiB
+Using default environment
+
+In:    serial
+Out:   serial
+Err:   serial
+MMC:   rtsmmc: 0
+Net:   Realtek PCIe GBE Family Controller mcfg = 0024
+no hw config header
+new_ethaddr = 00:00:00:00:00:00
+r8168#0
+no hw config header
+flash status is 0, 0, 0
+SF: Detected GD25Q64C with page size 256 Bytes, erase size 64 KiB, total 8 MiB
+get gpio value: 1
+ROOTFS IS OK
+KERNEL & DRV IS OK
+USER IS OK
+failed to read sd card
+boot kernel
+cmd buf: sf probe;sf read 0x80100000 0x100000 0x170000;bootm 0x80100000
+flash status is 0, 0, 0
+SF: Detected GD25Q64C with page size 256 Bytes, erase size 64 KiB, total 8 MiB
+SF: 1507328 bytes @ 0x100000 Read: OK
+## Booting kernel from Legacy Image at 80100000 ...
+get header OKimage_get_kernel check hcrc
+image_get_kernel print contents
+   Image Name:   linux_3.10
+   Created:      2020-04-02   3:45:36 UTC
+   Image Type:   MIPS Linux Kernel Image (uncompressed)
+   Data Size:    1366909 Bytes = 1.3 MiB
+   Load Address: 80410a60
+   Entry Point:  80410a60
+   Verifying Checksum ... OK
+   Loading Kernel Image ... OK
+
+Starting kernel ...
+
+Linux version 3.10.27 (wenhe@embed) (gcc version 4.8.5 20150209 (prerelease) (Realtek RSDK-4.8.5p1 Build 2521) ) #2 PREEMPT Wed Mar 25 18:46:19 CST 2020
+prom cpufreq = 500000000
+prom memsize = 67108864
+hw_ver: 0x2, hw_rev: 0x1, isp_ver: 0x1
+prom eth mac = 00:00:00:00:00:00
+bootconsole [early0] enabled
+CPU revision is: 0000dc02
+FPU revision is: 01730001
+Determined physical RAM map:
+ memory: 04000000 @ 00000000 (usable)
+Reserved contiguous memory at 0x433000(0x1618000)
+Zone ranges:
+  Normal   [mem 0x00000000-0x03ffffff]
+Movable zone start for each node
+Early memory node ranges
+  node   0: [mem 0x00000000-0x03ffffff]
+icache: 32kB/32B, dcache: 16kB/32B, scache: 0kB/0B
+Built 1 zonelists in Zone order, mobility grouping on.  Total pages: 16256
+Kernel command line: console=ttyS1,57600 root=/dev/mtdblock2 rts_hconf.hconf_mtd_idx=1 rts-quadspi.channels=dual mtdparts=m25p80:8192k@0(global),128k@0k(boot),896k@128k(rootfs),1472k@1024k(kernel),640k@2496k(drv),2304k@3136k(user),2304k@5440k(bakup),384k@7744k(mtd),64k@8128k(factory)
+PID hash table entries: 256 (order: -2, 1024 bytes)
+Dentry cache hash table entries: 8192 (order: 3, 32768 bytes)
+Inode-cache hash table entries: 4096 (order: 2, 16384 bytes)
+Memory: 38008k/65536k available (3362k kernel code, 27528k reserved, 600k data, 196k init, 0k highmem)
+SLUB: HWalign=32, Order=0-3, MinObjects=0, CPUs=1, Nodes=1
+Preemptible hierarchical RCU implementation.
+NR_IRQS:57
+Calibrating delay loop... 497.66 BogoMIPS (lpj=995328)
+pid_max: default: 32768 minimum: 301
+Mount-cache hash table entries: 512
+pinctrl core: initialized pinctrl subsystem
+regulator-dummy: no parameters
+NET: Registered protocol family 16
+Init force reset registers
+rtsxb2 registered with IRQs
+INFO: initializing ISP memory ...
+INFO: initializing ISP device ...
+ISP camera platform devices added
+INFO: initializing SD controller ...
+INFO: initializing snd device ...
+snd resvd mem size : 1048576
+INFO: initializing USB host ...
+INFO: initializing spi host ...0
+spi platform id is ffffffff
+INFO: initializing I2C master ...
+INFO: initializing DMA controller ...
+INFO: initializing adc ...
+INFO: initializing pinctrl device ...
+pinctrl_platform rts3903-pinctrl: rtspc registered with IRQs
+INFO: initializing ethernet devices ...
+INFO: initializing USB phy ...
+INFO: initializing watchdog controller ...
+INFO: initializing crypto device ...
+INFO: initializing pmu device ...
+INFO: initializing cpu dvfs device ...
+bio: create slab <bio-0> at 0
+rts_dmac rts3903-dmac: DesignWare DMA Controller, 4 channels
+INFO: realtek DMA engine inited
+usbcore: registered new interface driver usbfs
+usbcore: registered new interface driver hub
+usbcore: registered new device driver usb
+usbphy-platform usbphy-platform: Initialized Realtek IPCam USB Phy module
+Linux video capture interface: v2.00
+Advanced Linux Sound Architecture Driver Initialized.
+NET: Registered protocol family 2
+TCP established hash table entries: 512 (order: 0, 4096 bytes)
+TCP bind hash table entries: 512 (order: -1, 2048 bytes)
+TCP: Hash tables configured (established 512 bind 512)
+TCP: reno registered
+UDP hash table entries: 256 (order: 0, 4096 bytes)
+UDP-Lite hash table entries: 256 (order: 0, 4096 bytes)
+NET: Registered protocol family 1
+RPC: Registered named UNIX socket transport module.
+RPC: Registered udp transport module.
+RPC: Registered tcp transport module.
+RPC: Registered tcp NFSv4.1 backchannel transport module.
+squashfs: version 4.0 (2009/01/31) Phillip Lougher
+NFS: Registering the id_resolver key type
+Key type id_resolver registered
+Key type id_legacy registered
+jffs2: version 2.2. (NAND) © 2001-2006 Red Hat, Inc.
+msgmni has been set to 74
+NET: Registered protocol family 38
+Block layer SCSI generic (bsg) driver version 0.4 loaded (major 253)
+io scheduler noop registered
+io scheduler deadline registered
+io scheduler cfq registered (default)
+Serial: 8250/16550 driver, 3 ports, IRQ sharing disabled
+serial8250: ttyS0 at MMIO 0x18810000 (irq = 6) is a 16550A
+console [ttyS1] enabled, bootconsole disabled
+console [ttyS1] enabled, bootconsole disabled
+serial8250: ttyS1 at MMIO 0x18810100 (irq = 6) is a 16550A
+serial8250: ttyS2 at MMIO 0x18810200 (irq = 6) is a 16550A
+dbg_iomem initialized!
+rts-quadspi rts3903-qspi: force to set channels from quad mode to dual mode
+rts-quadspi rts3903-qspi: request 60000000 Hz, force to set 41666666 Hz
+rts-quadspi rts3903-qspi: found gd25q64c, expected mx25l12835f
+rts-quadspi rts3903-qspi: gd25q64c (8192 Kbytes)
+9 cmdlinepart partitions found on MTD device m25p80
+Creating 9 MTD partitions on "m25p80":
+0x000000000000-0x000000800000 : "global"
+0x000000000000-0x000000020000 : "boot"
+0x000000020000-0x000000100000 : "rootfs"
+0x000000100000-0x000000270000 : "kernel"
+0x000000270000-0x000000310000 : "drv"
+0x000000310000-0x000000550000 : "user"
+0x000000550000-0x000000790000 : "bakup"
+0x000000790000-0x0000007f0000 : "mtd"
+0x0000007f0000-0x000000800000 : "factory"
+rts-quadspi rts3903-qspi: Realtek QSPI Controller at 0x18030000 (irq 5)
+rtl8168 Gigabit Ethernet driver 8.038.00-NAPI loaded
+rtl8168 rts3903-r8168 (unregistered net_device): Get invalid MAC address from flash!
+eth%d: 0xb8400000, 00:00:00:00:00:00, IRQ 10
+ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver
+ehci-rts: ehci-rts platform driver
+ehci-platform ehci-platform: EHCI Host Controller
+ehci-platform ehci-platform: new USB bus registered, assigned bus number 1
+ehci-platform ehci-platform: irq 11, io mem 0x18100000
+ehci-platform ehci-platform: USB 2.0 started, EHCI 1.00
+usb usb1: New USB device found, idVendor=1d6b, idProduct=0002
+usb usb1: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+usb usb1: Product: EHCI Host Controller
+usb usb1: Manufacturer: Linux 3.10.27 ehci_hcd
+usb usb1: SerialNumber: ehci-platform
+hub 1-0:1.0: USB hub found
+hub 1-0:1.0: 1 port detected
+ohci_hcd: USB 1.1 'Open' Host Controller (OHCI) Driver
+ohci-platform ohci-platform: Generic Platform OHCI Controller
+ohci-platform ohci-platform: new USB bus registered, assigned bus number 2
+ohci-platform ohci-platform: irq 11, io mem 0x18180000
+usb usb2: New USB device found, idVendor=1d6b, idProduct=0001
+usb usb2: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+usb usb2: Product: Generic Platform OHCI Controller
+usb usb2: Manufacturer: Linux 3.10.27 ohci_hcd
+usb usb2: SerialNumber: ohci-platform
+hub 2-0:1.0: USB hub found
+hub 2-0:1.0: 1 port detected
+i2c /dev entries driver
+usb 1-1: new high-speed USB device number 2 using ehci-platform
+usb 1-1: New USB device found, idVendor=0bda, idProduct=f179
+usb 1-1: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+usb 1-1: Product: 802.11n
+usb 1-1: Manufacturer: Realtek
+usb 1-1: SerialNumber: 84E3429BDF77
+i2c_designware rts3903-i2c.0: controller timed out
+ERROR: Unable to read RTP_REG_DC4_TRIM_OFFSET reg
+i2c_designware rts3903-i2c.0: controller timed out
+ERROR: Unable to read RTP_REG_CHIP_VERSION reg
+rtp_mfd 0-0030: pre_init() failed: -145
+rtp_mfd: probe of 0-0030 failed with error -145
+Stopped watchdog timer
+timer margin: 8 sec
+TCP: cubic registered
+NET: Registered protocol family 17
+Key type dns_resolver registered
+mtd1 name is boot
+hconf init failed
+ALSA device list:
+  No soundcards found.
+VFS: Mounted root (squashfs filesystem) readonly on device 31:2.
+Freeing unused kernel memory: 196K (803ef000 - 80420000)
+Sat Oct 24 10:24:00 UTC 2015
+ _           _         _            
+| |         | |       | |           
+| |     ___ | |__  ___| |_ ___ _ __ 
+| |    / _ \| '_ \/ __| __/ _ \ '__|
+| |___| (_) | |_) \__ \ ||  __/ |   
+|______\___/|_.__/|___/\__\___|_|   
+                                    
+                                    
+ntpclient: can't load library 'libsysconf.so'
+jffs2: notice: (265) jffs2_build_xattr_subsystem: complete building xattr subsystem, 0 of xdatum (0 unchecked, 0 orphan) and 0 of xref (0 dead, 0 orphan) found.
+rlx snd internal codec init
+soc-audio soc-audio.0.auto: ASoC: machine RLX_INTERN_CARD should use snd_soc_register_card()
+soc-audio soc-audio.0.auto:  rlx-codec-digital <-> pcm-platform mapping ok
+soc-audio soc-audio.0.auto:  rlx-codec-analog <-> pcm-platform mapping ok
+usbcore: registered new interface driver rtl8188fu
+rtscam:isp resvd mem addr : 0x00533000, size : 0x1518000
+rtscam:rtscam_mem_init v:0xa0533000 p:0x00533000 s:0x00001518
+rtscam:rtscam_lock_init
+rtscam:rtscam_soc_probe
+rtscam:rtscam_hx280_probe
+rtscam:hx280enc:HW at base <0x18060000> with ID <0x48317011>
+rtscam:rtscam_jpgenc_probe
+rtscam:rtscam_osd2_probe
+rtscam:rtstream_init
+(none) login: status: active CC:
+killall: telnetd: no process killed
+excute rts3903 platform script..rtscam:begin to load fw from isp.fw
+.
+rtscam:Load firmware size : 131024.
+rtscam:Found ISP 1.011 device
+rtscam:+++++rtscam_video_device_probe 1473
+rtscam:+++++rtscam_video_device_probe 1473
+rtscam:+++++rtscam_video_device_probe 1473
+rtscam:+++++rtscam_video_device_probe 1473
+rtscam:+++++rtscam_video_device_probe 1477, streamnum: 4, 4
+rtscam:video device <rts3903-isp> registered
+rtscam:rts3903-isp initialized
+platform script...umount /drv/
+begin___, action: 0Started watchdog timer
+
+Started watchdog timer
+---84e3429beb50--
+rtscam:get regulator io fail
+rtscam:get io power fail
+rtscam:get regulator analog fail
+rtscam:get analog power fail
+rtscam:get regulator core fail
+rtscam:get core power fail
+device wlan0 entered promiscuous mode
+sh: 3: unknown operand
+MemTotal:          38204 kB
+MemFree:            1588 kB
+Buffers:            2656 kB
+Cached:            12516 kB
+SwapCached:            0 kB
+Active:             7148 kB
+Inactive:          13940 kB
+Active(anon):       5916 kB
+Inactive(anon):        0 kB
+Active(file):       1232 kB
+Inactive(file):    13940 kB
+Unevictable:           0 kB
+Mlocked:               0 kB
+SwapTotal:             0 kB
+SwapFree:              0 kB
+Dirty:                 0 kB
+Writeback:             0 kB
+AnonPages:          5932 kB
+Mapped:             7036 kB
+Shmem:                 0 kB
+Slab:               6216 kB
+SReclaimable:        984 kB
+SUnreclaim:         5232 kB
+KernelStack:         544 kB
+PageTables:          180 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:       19100 kB
+Committed_AS:      66296 kB
+VmallocTotal:    1048372 kB
+VmallocUsed:        3108 kB
+VmallocChunk:    1042808 kB
+drop_caches
+MemTotal:          38204 kB
+MemFree:           10248 kB
+Buffers:             368 kB
+Cached:             6384 kB
+SwapCached:            0 kB
+Active:             6556 kB
+Inactive:           6112 kB
+Active(anon):       5916 kB
+Inactive(anon):        0 kB
+Active(file):        640 kB
+Inactive(file):     6112 kB
+Unevictable:           0 kB
+Mlocked:               0 kB
+SwapTotal:             0 kB
+SwapFree:              0 kB
+Dirty:                 0 kB
+Writeback:             0 kB
+AnonPages:          5932 kB
+Mapped:             7036 kB
+Shmem:                 0 kB
+Slab:               5988 kB
+SReclaimable:        756 kB
+SUnreclaim:         5232 kB
+KernelStack:         536 kB
+PageTables:          180 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:       19100 kB
+Committed_AS:      66296 kB
+VmallocTotal:    1048372 kB
+VmallocUsed:        3108 kB
+VmallocChunk:    1042808 kB
+drop_caches
+MemTotal:          38204 kB
+MemFree:           10308 kB
+Buffers:             308 kB
+Cached:             6388 kB
+SwapCached:            0 kB
+Active:             6568 kB
+Inactive:           6044 kB
+Active(anon):       5916 kB
+Inactive(anon):        0 kB
+Active(file):        652 kB
+Inactive(file):     6044 kB
+Unevictable:           0 kB
+Mlocked:               0 kB
+SwapTotal:             0 kB
+SwapFree:              0 kB
+Dirty:                 0 kB
+Writeback:             0 kB
+AnonPages:          5932 kB
+Mapped:             7036 kB
+Shmem:                 0 kB
+Slab:               5984 kB
+SReclaimable:        752 kB
+SUnreclaim:         5232 kB
+KernelStack:         536 kB
+PageTables:          180 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:       19100 kB
+Committed_AS:      66296 kB
+VmallocTotal:    1048372 kB
+VmallocUsed:        3108 kB
+VmallocChunk:    1042808 kB
+drop_caches
+MemTotal:          38204 kB
+MemFree:           10304 kB
+Buffers:             308 kB
+Cached:             6388 kB
+SwapCached:            0 kB
+Active:             6572 kB
+Inactive:           6040 kB
+Active(anon):       5916 kB
+Inactive(anon):        0 kB
+Active(file):        656 kB
+Inactive(file):     6040 kB
+Unevictable:           0 kB
+Mlocked:               0 kB
+SwapTotal:             0 kB
+SwapFree:              0 kB
+Dirty:                 0 kB
+Writeback:             0 kB
+AnonPages:          5936 kB
+Mapped:             7036 kB
+Shmem:                 0 kB
+Slab:               5984 kB
+SReclaimable:        752 kB
+SUnreclaim:         5232 kB
+KernelStack:         536 kB
+PageTables:          180 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:       19100 kB
+Committed_AS:      66296 kB
+VmallocTotal:    1048372 kB
+VmallocUsed:        3108 kB
+VmallocChunk:    1042808 kB
+drop_caches
+
+
+Login timed out after 60 seconds(none) login:

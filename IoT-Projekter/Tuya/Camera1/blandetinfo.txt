@@ -1,0 +1,39 @@
+ Name:84:e3:42:9b:df:77
+IPv4:192.168.0.145
+IPv6: 
+
+ip_addr: inet addr:192.168.0.145 Bcast:192.168.0.255 Mask:255.255.255.0
+wifi_ssid:wlan0 IEEE 802.11bgn ESSID:"BamsWIFI2.4ghz" Nickname:"<WIFI@REALTEK>"
+route_info:default 192.168.0.1 0.0.0.0 UG 0 0 0 wlan0 192.168.0.0 bin dev drv etc init lib mnt opt proc root sys tmp usr var 255.255.255.0 U 0 0 0 wlan0
+network ok
+
+"id": "bfdfe1c2aeee8445d13hgu",
+      "mac": "84e3429bdf77",
+      "sn": "AVBBM05FT00EDA",
+      "uuid": "45317ddd121f8b27"
+    }
+
+     "active_time": 1658505694,
+    "category": "sp",
+    "category_name": "Smart Camera",
+    "create_time": 1658505694,
+    "gateway_id": "",
+    "icon": "smart/icon/ay1513237774906SMBA3/e34561b8a3c249ee97a0b04b27845bd3.png",
+    "id": "bfdfe1c2aeee8445d13hgu",
+    "ip": "185.112.210.184",
+    "lat": "",
+    "local_key": "76d45169a63277b7",
+    "lon": "",
+    "model": "WIFICO50CWT",
+    "name": "ab",
+    "online": false,
+    "owner_id": "43825495",
+    "product_id": "q1k3lckbrhygcfbq",
+    "product_name": "Outdoor Camera",
+    "sub": false,
+    "time_zone": "+02:00",
+    "update_time": 1658521862,
+    "uuid": "45317ddd121f8b27"
+
+    rts3903n 
+     gk421 
